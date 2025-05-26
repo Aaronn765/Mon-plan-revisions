@@ -38,7 +38,7 @@ function get26Semaines() {
   return semaines;
 }
 
-function App() {
+function Home() {
   const [matieres, setMatieres] = useState([]);
   const [nomMatiere, setNomMatiere] = useState("");
   const [etape, setEtape] = useState(1);
@@ -433,4 +433,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -1,0 +1,222 @@
+/* Reset basique */
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
+}
+
+#root > div {
+  background: white;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Titres */
+h1 {
+  font-weight: 800;
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #4A4A8F;
+  text-shadow: 1px 1px 4px #A6A6D9;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 3px solid #8e44ad;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Boutons */
+button {
+  background: linear-gradient(45deg, #7b4397, #dc2430);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(220,36,48,0.6);
+  letter-spacing: 0.03em;
+  font-size: 1rem;
+  user-select: none;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover, button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(220,36,48,0.8);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="time"],
+select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  width: auto;
+  min-width: 130px;
+  margin-right: 12px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="time"]:focus,
+select:focus {
+  border-color: #8e44ad;
+  box-shadow: 0 0 8px #a77ade80;
+}
+
+/* Listes */
+ul {
+  padding-left: 1.2em;
+  margin-bottom: 20px;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Alerte */
+div[style*="background-color: #f8d7da"] {
+  background-color: #ffdddd !important;
+  border-left: 6px solid #dc2430;
+  color: #842029 !important;
+  font-weight: 700;
+  padding: 15px 20px !important;
+  margin-bottom: 20px !important;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #e0b6b6;
+  user-select: none;
+}
+
+/* Planning hebdomadaire */
+h3 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #5D4E99;
+  text-align: center;
+  text-shadow: 0 0 6px #CFC0F9;
+}
+
+div[style*="display: flex"] {
+  gap: 20px !important;
+  overflow-x: auto !important;
+  padding-bottom: 15px;
+}
+
+/* Colonnes jours */
+div[style*="flex: 1 1 0"] {
+  background: #fefefe;
+  border-radius: 16px;
+  box-shadow: inset 0 0 12px #e2d5f5;
+  border: 1.5px solid #b8a3ff;
+  padding: 15px;
+  min-width: 140px !important;
+  user-select: none;
+}
+
+div[style*="flex: 1 1 0"] h4 {
+  color: #7b4397;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 1px 1px 5px #b499f6;
+}
+
+/* Séances */
+div[title="Cliquez pour modifier"] {
+  background-color: #d6c1f7 !important;
+  margin-bottom: 10px !important;
+  padding: 10px !important;
+  border-radius: 12px !important;
+  font-size: 0.9rem !important;
+  color: #3c1762 !important;
+  box-shadow: 0 0 10px #9b86ea;
+  cursor: pointer !important;
+  user-select: none;
+  transition: background-color 0.25s ease;
+}
+
+div[title="Cliquez pour modifier"]:hover {
+  background-color: #b8a4f7 !important;
+  box-shadow: 0 0 15px #ab93f8;
+}
+
+/* Form boutons supplémentaires */
+button[type="button"] {
+  background: #f44336;
+  box-shadow: 0 5px 12px #f55a53;
+}
+
+button[type="button"]:hover {
+  background: #d32f2f;
+  box-shadow: 0 7px 18px #f44c44;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  #root > div {
+    padding: 20px 15px;
+  }
+
+  input[type="text"],
+  input[type="time"],
+  select {
+    min-width: 100px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  div[style*="display: flex"] {
+    flex-direction: column !important;
+  }
+
+  div[style*="flex: 1 1 0"] {
+    min-width: 100% !important;
+  }
+}

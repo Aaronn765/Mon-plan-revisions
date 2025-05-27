@@ -7,12 +7,14 @@ const db = require('./models');
 
 // Import des routes utilisateurs
 const userRoutes = require('./src/routes/userRoutes');
+const authRoutes = require('./src/routes/authroutes');
 
 // Middleware pour parser le JSON
 app.use(express.json());
 
 // Utilisation des routes
 app.use('/api/utilisateurs', userRoutes);
+app.use('/api/auth', authRoutes);
 
 // Route de test
 app.get('/', (req, res) => {
